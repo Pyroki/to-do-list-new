@@ -1,0 +1,111 @@
+<style>
+ 
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#42085f);
+    padding: 10px;
+}
+.todoapp{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    padding: 40px 30px 70px;
+    margin: 100px auto 20px;
+    border-radius: 10px;
+}
+.todoapp h2{
+    color:#002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todoapp h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:#edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex:1 ;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 40px;
+    
+}
+ul li{
+    list-style: none;
+    font-size: 19px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("images/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left: 8px;
+}
+ul li.checked{
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url("images/checked.png");
+}
+</style>
+
+<div class="container">
+    <div class="todoapp">
+        <h2>To-Do-List <img src="images/icon.png"></h2>
+        <div class="row">
+            <input type="text" id="input" placeholder="add your task">
+            <button onclick="addtask()">Add</button>
+        </div>
+        <ul id="listcontainer">
+           <!-- <li class="checked">list1</li>
+            <li>list1</li>
+            <li>list1</li>
+            <li>list1</li> -->
+
+        </ul>
+    </div>
+</div>
+<script>
+    var inputbox=document.getElementById("input");
+    var box=document.getElementById("listcontainer");
+    function addtask(){
+        if(inputbox === ''){
+            alert("you must write something");
+            }
+            else{
+                let li=document.createElement("li");
+                l1.innerHTML=inputbox.value;
+                box.appendChild(li);
+            }
+        }
+    
+</script>
